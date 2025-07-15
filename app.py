@@ -100,7 +100,7 @@ def document_section():
         st.write("")
         st.write("")
         if st.button("Generate Content"):
-            st.session_state.doc_content += ai_generate_content(doc_prompt)
+            st.session_state.doc_content += ai_generate_content(doc_prompt) + "\n\n"
     
     # Document editor
     doc_content = st.text_area(
@@ -113,7 +113,7 @@ def document_section():
     
     # Document tools
     with st.expander("Document Tools"):
-        col1, col2 = st.colunms(2)
+        col1, col2 = st.columns(2)  # FIXED TYPO HERE
         with col1:
             st.button("Add Table")
             st.button("Insert Image")
